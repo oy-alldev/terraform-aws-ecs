@@ -209,7 +209,8 @@ resource "aws_ecs_service" "this" {
     ignore_changes = [
       desired_count, # Always ignored
       task_definition, # task definition github setting 
-      load_balancer #loadbalancer Codedeploy set 
+      load_balancer, #loadbalancer Codedeploy set 
+      capacity_provider_strategy,
     ]
   }
 }
