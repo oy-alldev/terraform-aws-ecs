@@ -348,8 +348,7 @@ resource "aws_ecs_service" "this" {
   lifecycle {
     ignore_changes = [
       desired_count, # Always ignored
-      task_definition,  
-      load_balancer[*].elb_listener_arn  # ALB 리스너 변경 무시
+      task_definition,
     ]
   }
 }
